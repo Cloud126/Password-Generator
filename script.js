@@ -8,12 +8,13 @@ var number = [0,1,2,3,4,5,6,7,8,9];
 
 function generatePassword() {
     //User's desire length for password
-    var pLength = parseInt(prompt("How many characters would you like?"));
+    var pLength = parseInt(prompt("How long would you like your password to be? Must be between 8 and 128."));
     //This will show message if user doesn't type in value for desired password length
     if (isNaN(length) === true){
-      alert("Must use a value!");
+      alert("Must use a number!");
       return;
     }
+    
     //if user types above 128
     if(pLength > 128) {
       alert("Must be between 8 and 128 characters.");
@@ -39,63 +40,63 @@ function generatePassword() {
     }
 
     //If and else statements for options
-    if(hasSpecial && hasUppercase && hasLowercase && hasNumber) {
+    if(hasSpecial === true && hasUppercase === true && hasLowercase === true && hasNumber === true) {
       choices = special.concat(uppercase,lowercase,number);
     }
     /*3 option*/
-    else if(hasSpecial && hasUppercase && hasLowercase) {
+    else if(hasSpecial === true && hasUppercase === true && hasLowercase === true) {
       choices = special.concat(uppercase,lowercase);
     }
 
-    else if(hasSpecial && hasUppercase && hasNumber) {
+    else if(hasSpecial === true && hasUppercase === true && hasNumber === true) {
       choices = special.concat(uppercase,number);
     }
 
-    else if(hasSpecial && hasLowercase && hasNumber) {
+    else if(hasSpecial === true && hasLowercase === true && hasNumber === true) {
       choices = special.concat(lowercase,number);
     }
 
-    else if(hasUppercase && hasLowercase && hasNumber) {
+    else if(hasUppercase === true && hasLowercase === true && hasNumber === true) {
       choices = uppercase.concat(lowercase,number);
     }
     /*2 option*/
-    else if(hasSpecial && hasUppercase){
+    else if(hasSpecial === true && hasUppercase === true){
       choices = special.concat(uppercase);
     }
 
-    else if(hasSpecial && hasLowercase) {
+    else if(hasSpecial === true && hasLowercase === true) {
       choices = lowercase.concat(lowercase);
     }
     
-    else if(hasSpecial && hasNumber) {
+    else if(hasSpecial === true && hasNumber === true) {
       choices = special.concat(number);
     }
 
-    else if(hasUppercase && lowercase) {
+    else if(hasUppercase === true && lowercase === true) {
       choices = uppercase.concat(lowercase);
     }
 
-    else if(uppercase && number) {
+    else if(uppercase === true && number === true) {
       choices = uppercase.concat(number);
     }
 
-    else if(hasLowercase && hasNumber) {
+    else if(hasLowercase === true && hasNumber === true) {
       choices = lowercase.concat(number);
     }
     /*1 option*/
-    else if(hasSpecial) {
+    else if(hasSpecial === true) {
       choices = special;
     }
 
-    else if(hasUppercase) {
+    else if(hasUppercase === true) {
       choices = uppercase;
     }
 
-    else if(hasLowercase) {
+    else if(hasLowercase === true) {
       choices = lowercase;
     }
 
-    else if(hasNumber) {
+    else if(hasNumber === true) {
       choices = number;
     }
 
