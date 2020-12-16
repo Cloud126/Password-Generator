@@ -41,7 +41,7 @@ function generatePassword() {
 
     //If and else statements for options//
     if(hasSpecial === true && hasUppercase === true && hasLowercase === true && hasNumber === true) {
-      choices = special.concat(uppercase,lowercase,number);
+      var choices = special.concat(uppercase,lowercase,number);
     }
    
     else if(hasSpecial === true && hasUppercase === true && hasLowercase === true) {
@@ -103,8 +103,8 @@ function generatePassword() {
     var finalPassword = [];
     
     for(var i = 0; i < pLength; i++) {
-      var userChoices = choices[Math.floor(Math.random() * choices.length)];
-      finalPassword.push(userChoices);
+      var userPick = choices[Math.floor(Math.random() * choices.length)];
+      finalPassword.push(userPick);
     }
       return finalPassword.join("");
   }
