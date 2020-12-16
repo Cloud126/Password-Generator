@@ -7,7 +7,7 @@ var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"
 var number = [0,1,2,3,4,5,6,7,8,9];
 
 function generatePassword() {
-    //User's desire length for password
+    //User's desire length for password//
     var pLength = parseInt(prompt("How long would you like your password to be? Must be between 8 and 128."));
     //This will show message if user doesn't type in value for desired password length
     if (isNaN(length) === true){
@@ -15,22 +15,22 @@ function generatePassword() {
       return;
     }
     
-    //if user types above 128
+    //if user chooses above 128//
     if(pLength > 128) {
       alert("Must be between 8 and 128 characters.");
       return;
     }
-    //if user chooses below 8
+    //if user chooses below 8//
     if(pLength < 8) {
       alert("Must be between 8 and 128 characters.");
       return;
     }
-    //confirmation for criteria options
+    //confirmation for criteria options//
     var hasSpecial = confirm("Do you want to use special characters?");
     var hasUppercase = confirm("Do you want to use uppercase?");
     var hasLowercase = confirm("Do you want to use lowercase?");
     var hasNumber = confirm("Do you want to use numbers?");
-    //if user does not choose any criteria
+    //if user does not choose any criteria//
     if(hasSpecial === false &&
       hasUppercase === false &&
       hasLowercase === false &&
@@ -39,11 +39,11 @@ function generatePassword() {
       return;
     }
 
-    //If and else statements for options
+    //If and else statements for options//
     if(hasSpecial === true && hasUppercase === true && hasLowercase === true && hasNumber === true) {
       choices = special.concat(uppercase,lowercase,number);
     }
-    /*3 option*/
+   
     else if(hasSpecial === true && hasUppercase === true && hasLowercase === true) {
       choices = special.concat(uppercase,lowercase);
     }
@@ -59,7 +59,7 @@ function generatePassword() {
     else if(hasUppercase === true && hasLowercase === true && hasNumber === true) {
       choices = uppercase.concat(lowercase,number);
     }
-    /*2 option*/
+  
     else if(hasSpecial === true && hasUppercase === true){
       choices = special.concat(uppercase);
     }
@@ -83,7 +83,7 @@ function generatePassword() {
     else if(hasLowercase === true && hasNumber === true) {
       choices = lowercase.concat(number);
     }
-    /*1 option*/
+    
     else if(hasSpecial === true) {
       choices = special;
     }
@@ -103,8 +103,8 @@ function generatePassword() {
     var finalPassword = [];
     
     for(var i = 0; i < pLength; i++) {
-      var userPicks = choices[Math.floor(Math.random() * choices.length)];
-      finalPassword.push(userPicks);
+      var userChoices = choices[Math.floor(Math.random() * choices.length)];
+      finalPassword.push(userChoices);
     }
       return finalPassword.join("");
   }
