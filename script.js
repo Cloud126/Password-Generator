@@ -103,14 +103,13 @@ function generatePassword() {
     var finalPassword = [];
     
     for(var i = 0; i < pLength; i++) {
-      var userPick = choices[Math.floor(Math.random() * choices.length)];
-      finalPassword.push(userPick);
+      var userPicks = choices[Math.floor(Math.random() * choices.length)];
+      finalPassword.push(userPicks);
     }
       return finalPassword.join("");
   }
        
   // Write password to the #password input
-  var userPassword = [];
   function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
