@@ -9,8 +9,8 @@ var number = [0,1,2,3,4,5,6,7,8,9];
 function generatePassword() {
     //User's desire length for password//
     var pLength = parseInt(prompt("How long would you like your password to be? Must be between 8 and 128."));
-    //This will show message if user doesn't type in value for desired password length
-    if (isNaN(length) === true){
+    //This will show message if user doesn't type in value for desired password length//
+    if (isNaN(pLength) === true){
       alert("Must use a number!");
       return;
     }
@@ -100,8 +100,7 @@ function generatePassword() {
       choices = number;
     }
 
-    var finalPassword = [];
-    
+   
     for(var i = 0; i < pLength; i++) {
       var userPicks = choices[Math.floor(Math.random() * choices.length)];
       finalPassword.push(userPicks);
@@ -110,6 +109,7 @@ function generatePassword() {
   }
        
   // Write password to the #password input
+  var finalPassword = [];
   function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
